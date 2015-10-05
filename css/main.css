@@ -92,11 +92,36 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   BarrocIT's custom styles
    ========================================================================== */
+header {
+ text-align: center;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
 
 
+.container {
+    width: 1200px;
+    overflow: hidden;
+}
 
+.form-group {
+    width: 340px;
+    height: 240px;
+    border: 1px solid black;
+    padding: 30px 30px 30px 30px;
+    margin: 0 auto;
+}
+
+.form-control:first-of-type {
+    margin-bottom: 20px;
+}
+
+.login-button {
+    float: right;
+    margin-top: 20px;
+}
 
 
 
