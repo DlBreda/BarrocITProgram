@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=adresboek';
+$dsn = 'mysql:host=localhost;dbname=barrocit';
 $username = 'root';
 $password = '';
 
