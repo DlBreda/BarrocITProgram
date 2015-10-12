@@ -4,17 +4,22 @@
     <header>
         <img src="img/logo.png" height="250" width="240" alt="">
     </header>
-    <main>
-        <div class="form-group col-md-3 col-md-push-6">
-            <form action="">
-                <p>Username</p>
-                <input class="form-control" type="text" value="" placeholder="Username">
-                <p>Password</p>
-                <input class="form-control" type="text" value="" placeholder="Password">
-                <input class="button login-button" type="submit" value="Login">
+    <div class="main-login">
+        <div class="form-group login-border" >
+            <form action="<?= HTTP_PATH . 'app/controllers/authController.php' ?>" method="post" style="margin-top: 20px;">
+                <input type="hidden" value="login" name="type">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <input class="btn btn-primary pull-right" type="submit" value="Login">
             </form>
         </div>
-    </main>
+    </div>
     <footer>
         <div class="copyright">
 
