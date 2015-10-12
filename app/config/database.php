@@ -1,9 +1,9 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=adresboek';
+$dsn = 'mysql:host=localhost;dbname=barrocit';
 
-$username = 'kimvg2';
-$password = '6yhnji9';
+$username = 'root';
+$password = '';
 
 
 try {
