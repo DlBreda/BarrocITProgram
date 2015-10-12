@@ -95,6 +95,44 @@ textarea {
    Custom CSS BarrocIT-Panel
    ========================================================================== */
 
+header {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+body {
+    margin-top: 0px;
+    padding-top: 0px;
+
+}
+
+.container-login {
+    background: url(../../img/background.jpg) no-repeat;
+    margin-top: 0px;
+    /*background-size: 100%;*/
+    background-size: cover;
+    height: 100vh;
+    margin-bottom: 0px;
+}
+
+.form-group {
+    width: 340px;
+    height: 240px;
+    border: 1px solid black;
+    padding: 30px 30px 30px 30px;
+}
+
+.form-control:first-of-type {
+    margin-bottom: 20px;
+}
+
+.login-button {
+    float: right;
+    margin-top: 20px;
+}
+
+
 
 .container {
     overflow: hidden;
@@ -106,6 +144,7 @@ aside {
     width: 19.8%;
     height: 100vh;
     border-right: 1px solid black;
+    border-left: 1px solid black;
     padding-left: 0px;
     margin-right: 0px;
     position: relative;
