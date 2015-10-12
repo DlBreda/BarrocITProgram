@@ -2,7 +2,7 @@
 
 $dsn = 'mysql:host=localhost;dbname=adresboek';
 $username = 'root';
-$password = 'Geheimpje119!';
+$password = '';
 
 try {
 	$db = new PDO($dsn, $username, $password);
