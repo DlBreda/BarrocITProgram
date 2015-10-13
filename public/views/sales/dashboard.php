@@ -12,7 +12,7 @@
         <div class="header-welcome">
         </div>
     </header>
-    <?php require_once __DIR__ . '/../aside.php'; ?>
+    <?php require_once __DIR__ . '/aside.php'; ?>
     <main>
         <h1>Notificaties</h1>
         <div class="content">
@@ -21,5 +21,5 @@
     </main>
 </div>
 
-<?php require_once __DIR__ . '/../../footer.php'; ?>
+<?php require_once __DIR__ . '/../footer.php'; ?>
 

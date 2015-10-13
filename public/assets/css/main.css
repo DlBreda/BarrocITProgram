@@ -199,6 +199,7 @@ main h1 {
     padding-top: 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    margin-bottom: 0px;
 }
 
 main .content {
@@ -210,6 +211,32 @@ main .content {
 h1 {
     color: red;
 }
+
+
+/* Finance */
+
+.finance-content {
+    padding-left: 0px !important;
+}
+
+ul.invoices {
+    width: 129%;
+    padding: 0px;
+}
+
+.invoices a {
+    color: black;
+    font-size: 15px;
+}
+
+.invoices li {
+    border-bottom: 1px solid black;
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+}
+
+
 
 
 

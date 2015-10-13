@@ -12,7 +12,11 @@
         <div class="header-welcome">
         </div>
     </header>
+<<<<<<< HEAD
     <?php require_once __DIR__ . '/../../aside.php'; ?>
+=======
+    <?php require_once __DIR__ . '/aside.php'; ?>
+>>>>>>> origin/master
     <main>
         <h1>Notificaties</h1>
         <div class="content">
