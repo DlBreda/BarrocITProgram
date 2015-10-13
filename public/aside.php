@@ -17,8 +17,8 @@
 
     <div class="bottom-aside">
         <ul>
-            <li><a href=""></a>Uitloggen</li>
-            <li><a href=""></a>Admin</li>
+            <li><a href="">Uitloggen</a></li>
+            <li><a href="">Admin</a></li>
         </ul>
     </div>
 </aside>
