@@ -220,7 +220,6 @@ h1 {
 }
 
 ul.invoices {
-    width: 129%;
     padding: 0px;
 }
 
@@ -233,8 +232,79 @@ ul.invoices {
     border-bottom: 1px solid black;
     list-style: none;
     text-align: center;
+    height: 42px;
     padding: 10px;
 }
+
+    /* finance-invoices*/
+
+
+
+.invoices-top {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.invoices-top a {
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-left: 40px;
+    padding: 15px;
+}
+
+.invoices-top h3{
+    margin-top: 16px;
+    margin-bottom: 14px;
+}
+
+main .invoices-content {
+    padding-left: 0%;
+    width: 100%;
+}
+
+.main-box {
+    width: 20%;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.check {
+    width: 50%;
+    float: left;
+}
+
+.check:first-child {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.check h4 {
+    text-align: center;
+    margin-top: 19px;
+    margin-bottom: 0px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid black;
+}
+
+.check-box {
+    width: 50%;
+    float: left;
+}
+
+.check ul {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.check ul li {
+    height: 42px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-top: 12px;
+}
+
 
 
 
