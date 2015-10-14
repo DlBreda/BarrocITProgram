@@ -3,7 +3,10 @@
 
 app/config/database.php
 app/init.php
+<<<<<<< HEAD
 
 app/config/database.php
 
 .idea/workspace.xml
+=======
+>>>>>>> origin/master
