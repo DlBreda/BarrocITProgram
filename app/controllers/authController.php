@@ -7,7 +7,7 @@ switch($_POST['type']){
         if (login($_POST['username'],
             $_POST['password']))
         {
-            header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
+//            header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
         }
         break;
 
@@ -41,47 +41,26 @@ function login($username, $password)
     // als dat zo is kom de username overeen want hierboven check je of
     // de username erin staat als dat zo is, is er 1 dus groter dan 0
     if ($q->rowcount() > 0) {
-        $user = $q->fetch();
+        $user = $q->fetchAll();
+
         if (password_verify($password, $user['password'])) {
-            //we got a winner!!
-            //zorg ervoor dat dit true of false returned
-            //zodat er niet hier geredirect wordt maar dat later kan worden gebruikt
-            return true;
+
+
+            $_SESSION["user"] = $user;
+
+            switch ($_SESSION["user"]) {
+                case '1':
+                    if($user['id'] === 1) {
+                        header('http://www.youtube.com');
+                    }
+                    break;
+
+                case '2':
+                    if($user['id'] === 2) {
+                        header('http://www.facebook.com');
+                    }
+                    break;
+            }
         }
-    }
-
-    switch ($_POST) {
-        case '1';
-            if ($_POST['id'] === 1) {
-                header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
-            }
-            // check if $_POST['id']; === 1
-            //then redirect to admin/dashboard.php
-            break;
-
-        case '2';
-            if ($_POST['id'] === 2) {
-                header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/sales/dashboard.php');
-            }
-            // check if $_POST['id']; === 2
-            //then redirect to sales/dashboard.php
-            break;
-
-        case '3';
-            if ($_POST['id'] === 3) {
-                header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/finance/dashboard.php');
-            }
-            // check if $_POST['id']; === 3
-            //then redirect to finance/dashboard.php
-            break;
-
-        case '4';
-            if ($_POST['id'] === 4) {
-                header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/development/dashboard.php');
-            }
-            // check if $_POST['id']; === 4
-            //then redirect to development/dashboard.php
-            break;
-
     }
 }
