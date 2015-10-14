@@ -2,12 +2,11 @@
 
 
 
-switch($_POST['type']){
+switch($_POST['type']) {
     case 'login':
         if (login($_POST['username'],
-            $_POST['password']))
-        {
-//            header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
+            $_POST['password'])){
+
         }
         break;
 
@@ -29,7 +28,7 @@ function login($username, $password)
 
     if (empty($username) || empty($password)) {
         header('location:http://localhost/barrocitprogram/BarrocITProgram/public/');
-        return false;
+        exit;
     }
 
     $sql = "SELECT * FROM tbl_users WHERE username = :username";
@@ -41,26 +40,32 @@ function login($username, $password)
     // als dat zo is kom de username overeen want hierboven check je of
     // de username erin staat als dat zo is, is er 1 dus groter dan 0
     if ($q->rowcount() > 0) {
-        $user = $q->fetchAll();
+        $user = $q->fetch(PDO::FETCH_ASSOC);
 
         if (password_verify($password, $user['password'])) {
-
-
-            $_SESSION["user"] = $user;
-
-            switch ($_SESSION["user"]) {
-                case '1':
-                    if($user['id'] === 1) {
-                        header('http://www.youtube.com');
-                    }
+            switch ((int)$user['id']) {
+                case 1:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
                     break;
 
-                case '2':
-                    if($user['id'] === 2) {
-                        header('http://www.facebook.com');
-                    }
+                case 2:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/sales/dashboard.php');
                     break;
+
+                case 3:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/finance/dashboard.php');
+                    break;
+
+                case 4:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/development/dashboard.php');
+                    break;
+
+                default:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public');
+
             }
+            exit;
         }
     }
+    header('location:');
 }
