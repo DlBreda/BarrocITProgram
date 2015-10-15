@@ -14,7 +14,9 @@
     </header>
     <?php require_once __DIR__ . '/../aside.php'; ?>
     <main>
-        <h1>Trailing invoices</h1>
+        <div class="top-dashboard-finance">
+            <h1>Trailing invoices</h1>
+        </div>
         <div class="content finance-content">
             <ul class="invoices">
                 <li ><a href="">klant - factuur - bedrag</a></li>

@@ -158,7 +158,7 @@ aside {
 aside ul {
     margin-left: 0px;
     padding-left: 0px;
-    margin-top: 21.5px;
+    /*margin-top: 21.5px;*/
 }
 
 aside ul li {
@@ -166,7 +166,8 @@ aside ul li {
     padding-bottom: 16px;
     padding-top: 16px;
     border-bottom: 1px solid black;
-    padding-left: 20px;;
+    padding-left: 20px;
+    height: 58px;
 }
 
 aside ul li:first-of-type {
@@ -182,6 +183,7 @@ aside ul li a:hover {
     cursor: pointer;
 }
 
+
 aside .bottom-aside {
     position: absolute;
     bottom: 0px;
@@ -191,6 +193,7 @@ aside .bottom-aside {
 main {
     float: left;
     width: 80%;
+    border-right: 1px solid black;
 }
 
 main h1 {
@@ -214,8 +217,13 @@ h1 {
 
 /* Finance */
 
-.finance-content {
+.top-dashboard-finance h1 {
+    padding-bottom: 10px;
+}
+
+main .finance-content {
     padding-left: 0px !important;
+    width: 100%;
 }
 
 ul.invoices {
@@ -242,6 +250,7 @@ ul.invoices {
 .invoices-top {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    overflow: hidden;
 }
 
 .invoices-top a {
@@ -253,8 +262,25 @@ ul.invoices {
 }
 
 .invoices-top h3{
-    margin-top: 16px;
-    margin-bottom: 14px;
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+}
+
+.invoices-top form {
+    float: right;
+    border-left: 1px solid black;
+}
+
+.invoices-top input {
+    margin: 15px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.invoices-top button {
+    margin-right: 10px;
+    border-radius: 6px;
 }
 
 main .invoices-content {
