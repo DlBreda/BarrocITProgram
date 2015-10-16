@@ -21,7 +21,6 @@ switch($_POST['type']) {
 }
 
 
-
 function login($username, $password)
 {
     global $db;
@@ -45,7 +44,7 @@ function login($username, $password)
         if (password_verify($password, $user['password'])) {
             switch ((int)$user['id']) {
                 case 1:
-                    header('location' . HTTP_PATH . '/public/views/dashboards/admin.php');
+                    header('location:' . HTTP_PATH . '/public/views/dashboards/admin.php');
                     break;
 
                 case 2:
