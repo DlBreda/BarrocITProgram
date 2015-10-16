@@ -45,19 +45,19 @@ function login($username, $password)
         if (password_verify($password, $user['password'])) {
             switch ((int)$user['id']) {
                 case 1:
-                    header('location' . HTTP_PATH . '/public/views/admin/dashboard.php');
+                    header('location' . HTTP_PATH . '/public/views/dashboards/admin.php');
                     break;
 
                 case 2:
-                    header('location: ' . HTTP_PATH . '/public/views/sales/dashboard.php');
+                    header('location: ' . HTTP_PATH . '/public/views/dashboards/sales.php');
                     break;
 
                 case 3:
-                    header('location:' . HTTP_PATH . '/public/views/finance/dashboard.php');
+                    header('location:' . HTTP_PATH . '/public/views/dashboards/finance.php');
                     break;
 
                 case 4:
-                    header('location:' . HTTP_PATH . '/public/views/development/dashboard.php');
+                    header('location:' . HTTP_PATH . '/public/views/dashboards/development.php');
                     break;
 
                 default:
