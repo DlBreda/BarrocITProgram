@@ -7,7 +7,7 @@ if ( session_status() === PHP_SESSION_ACTIVE && !empty( $_COOKIE['PHPSESSID'] ) 
 
     session_id($_COOKIE['PHPSESSID']);
 }
-
+    define('test', 'testje');
 
     define('SCHEME', 'http');
 
