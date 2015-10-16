@@ -2,24 +2,12 @@
 
 
 
-
-$username = "Damian";
-$password = "DamianBreda";
-
-$hashed = password_hash($password, PASSWORD_DEFAULT);
-
-$sql = "INSERT INTO users (username, password)
-        VALUES ('$username', '$hashed')";
-
-$db->query($sql);
-var_dump($_POST);
-
-
-
-switch($_POST['type']){
+switch($_POST['type']) {
     case 'login':
-        login($_POST['username'],
-            $_POST['password']);
+        if (login($_POST['username'],
+            $_POST['password'])){
+
+        }
         break;
 
     case 'logout':
@@ -33,40 +21,51 @@ switch($_POST['type']){
 }
 
 
-function login($username, $password) {
+
+function login($username, $password)
+{
     global $db;
 
-    if(empty($username) || empty($password)) {
-        return false;
+    if (empty($username) || empty($password)) {
+        header('location:http://localhost/barrocitprogram/BarrocITProgram/public/');
+        exit;
     }
 
-    $sql = "SELECT * FROM users WHERE username = :username";
+    $sql = "SELECT * FROM tbl_users WHERE username = :username";
     $q = $db->prepare($sql);
     $q->bindParam(':username', $username);
     $q->execute();
+
     //Hier wordt gecheckt of het aantal rijen grooter is dan 0 of gelijk is aan 1
     // als dat zo is kom de username overeen want hierboven check je of
     // de username erin staat als dat zo is, is er 1 dus groter dan 0
-    if($q->rowcount() > 0) {
-        $user = $q->fetch();
+    if ($q->rowcount() > 0) {
+        $user = $q->fetch(PDO::FETCH_ASSOC);
 
-        if(password_verify($password, $user['password'])) {
-            //we got a winner!!
-            //zorg ervoor dat dit true of false returned
-            //zodat er niet hier geredirect wordt maar dat later kan worden gebruikt
-            echo "nailed it..";
-            die();
+        if (password_verify($password, $user['password'])) {
+            switch ((int)$user['id']) {
+                case 1:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
+                    break;
+
+                case 2:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/sales/dashboard.php');
+                    break;
+
+                case 3:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/finance/dashboard.php');
+                    break;
+
+                case 4:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/development/dashboard.php');
+                    break;
+
+                default:
+                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public');
+
+            }
+            exit;
         }
     }
-
+    header('location:');
 }
-
-
-
-
-
-
-
-
-
-?>
