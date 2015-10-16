@@ -8,7 +8,7 @@
 
 if ($_SESSION['id'] != '1')
 {
-    header('location: ');
+    header('location:' . HTTP_PATH . '/public');
 }
 
 ?>

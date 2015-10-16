@@ -48,7 +48,7 @@ function login($username, $password)
                     break;
 
                 case 2:
-                    header('location: ' . HTTP_PATH . '/public/views/dashboards/sales.php');
+                    header('location:' . HTTP_PATH . '/public/views/dashboards/sales.php');
                     break;
 
                 case 3:
