@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - barrocit@localhost" uuid="40c670ce-727e-4e5d-befd-c7b4131df539">
-    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+  <data-source name="MySQL - mydb@localhost" uuid="aa286bdb-31a2-491f-9b1c-31495035d6d9">
+    <database-info product="MySQL" version="5.5.42" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="barrocit"/>
-    <table name="tbl_appointments" schema="" catalog="barrocit" type="TABLE">
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="mydb"/>
+    <table name="tbl_appointments" schema="" catalog="mydb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="customerID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="projectID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="appointmentDate" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="appointmentMadeAt" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="customerID" columns="customerID" ref-table="tbl_customers" ref-schema="" ref-catalog="barrocit" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="projectID" columns="projectID" ref-table="tbl_projects" ref-schema="" ref-catalog="barrocit" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="customerID" columns="customerID" ref-table="tbl_customers" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="projectID" columns="projectID" ref-table="tbl_projects" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="customerID_UNIQUE" unique="true" columns="customerID"/>
       <index name="projectID_idx" unique="false" columns="projectID"/>
     </table>
-    <table name="tbl_customers" schema="" catalog="barrocit" type="TABLE">
+    <table name="tbl_customers" schema="" catalog="mydb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="companyName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="adress" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
@@ -37,10 +37,10 @@
       <column name="creditWorthy" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="bankAccountNumber" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="customerID" table="tbl_appointments" schema="" catalog="barrocit" columns="customerID"/>
-      <exported-key name="projects_customers_relation" table="tbl_projects" schema="" catalog="barrocit" columns="customerID"/>
+      <exported-key name="customerID" table="tbl_appointments" schema="" catalog="mydb" columns="customerID"/>
+      <exported-key name="projects_customers_relation" table="tbl_projects" schema="" catalog="mydb" columns="customerID"/>
     </table>
-    <table name="tbl_invoices" schema="" catalog="barrocit" type="TABLE">
+    <table name="tbl_invoices" schema="" catalog="mydb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="projectID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="createdAt" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
@@ -50,10 +50,10 @@
       <column name="paid" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="sent" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="tbl_invoices_ibfk_1" columns="projectID" ref-table="tbl_projects" ref-schema="" ref-catalog="barrocit" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tbl_invoices_ibfk_1" columns="projectID" ref-table="tbl_projects" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="projectID_idx" unique="false" columns="projectID"/>
     </table>
-    <table name="tbl_projects" schema="" catalog="barrocit" type="TABLE">
+    <table name="tbl_projects" schema="" catalog="mydb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="customerID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
@@ -65,12 +65,12 @@
       <column name="projectPrice" sqlType="DECIMAL" precision="20" scale="0" nullable="false" jdbcType="3"/>
       <column name="operatingSystem" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="projects_customers_relation" columns="customerID" ref-table="tbl_customers" ref-schema="" ref-catalog="barrocit" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="projectID" table="tbl_appointments" schema="" catalog="barrocit" columns="projectID"/>
-      <exported-key name="tbl_invoices_ibfk_1" table="tbl_invoices" schema="" catalog="barrocit" columns="projectID"/>
+      <foreign-key name="projects_customers_relation" columns="customerID" ref-table="tbl_customers" ref-schema="" ref-catalog="mydb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="projectID" table="tbl_appointments" schema="" catalog="mydb" columns="projectID"/>
+      <exported-key name="tbl_invoices_ibfk_1" table="tbl_invoices" schema="" catalog="mydb" columns="projectID"/>
       <index name="customerID_UNIQUE" unique="true" columns="customerID"/>
     </table>
-    <table name="tbl_users" schema="" catalog="barrocit" type="TABLE">
+    <table name="tbl_users" schema="" catalog="mydb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="username" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>

@@ -35,6 +35,7 @@ function login($username, $password)
     $q->bindParam(':username', $username);
     $q->execute();
 
+
     //Hier wordt gecheckt of het aantal rijen grooter is dan 0 of gelijk is aan 1
     // als dat zo is kom de username overeen want hierboven check je of
     // de username erin staat als dat zo is, is er 1 dus groter dan 0
