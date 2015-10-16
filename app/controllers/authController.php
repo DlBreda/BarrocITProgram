@@ -45,23 +45,23 @@ function login($username, $password)
         if (password_verify($password, $user['password'])) {
             switch ((int)$user['id']) {
                 case 1:
-                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/admin/dashboard.php');
+                    header('location' . HTTP_PATH . '/public/views/admin/dashboard.php');
                     break;
 
                 case 2:
-                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/sales/dashboard.php');
+                    header('location: ' . HTTP_PATH . '/public/views/sales/dashboard.php');
                     break;
 
                 case 3:
-                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/finance/dashboard.php');
+                    header('location:' . HTTP_PATH . '/public/views/finance/dashboard.php');
                     break;
 
                 case 4:
-                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public/views/development/dashboard.php');
+                    header('location:' . HTTP_PATH . '/public/views/development/dashboard.php');
                     break;
 
                 default:
-                    header('location:http://localhost/barrocitprogram/BarrocITProgram/public');
+                    header('location:' . HTTP_PATH . '/public');
 
             }
             exit;
