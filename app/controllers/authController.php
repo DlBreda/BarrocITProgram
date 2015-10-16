@@ -27,7 +27,7 @@ function login($username, $password)
     global $db;
 
     if (empty($username) || empty($password)) {
-        header('location:http://localhost/barrocitprogram/BarrocITProgram/public/');
+        header('location: ' . HTTP_PATH . '/public/');
         exit;
     }
 
