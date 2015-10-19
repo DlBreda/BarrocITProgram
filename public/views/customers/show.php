@@ -7,10 +7,21 @@
  */
 
 $sql = "SELECT * FROM tbl_customers";
+$q = $db->query($sql);
 
 ?>
 
+<div class="container">
+    <header>
+        <div class="header-welcome">
 
+        </div>
+    </header>
+    <?php require_once __DIR__ . '/../../aside.php'; ?>
+    <main>
+        <h3><?php  ?></h3>
+    </main>
+</div>
 
 
 
