@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/../../header.php';
 
-$sql = "SELECT companyName, contactPerson, count(tbl_projects.id) as totalProjects
+$sql = "SELECT tbl_customers.id, companyName, contactPerson, count(tbl_projects.id) as totalProjects
             FROM tbl_customers
             LEFT JOIN tbl_projects
             ON tbl_projects.customerID = tbl_customers.id
@@ -17,6 +17,7 @@ if ( $q->rowCount() > 0 )
  * Date: 13-10-2015
  * Time: 10:05
  */
+
 ?>
 
     <div class="container">
@@ -26,6 +27,11 @@ if ( $q->rowCount() > 0 )
         </header>
         <?php require_once __DIR__ . '/../../aside.php'; ?>
             <main>
+                <?php
+                if($messageBag->hasMsg()) {
+                    echo $messageBag->show();
+                }
+                ?>
                 <div class="invoices-top">
                     <h3>Customer overview</h3>
                     <h3><a href="add.php"> Add </a></h3>
@@ -44,7 +50,7 @@ if ( $q->rowCount() > 0 )
                         <?php if ( isset($customers) ): ?>
                             <?php foreach( $customers as $customer ): ?>
                                 <tr>
-                                    <td><a href="show.php"> <?= $customer['companyName']; ?></a></td>
+                                    <td><a href="<?= 'show.php?id=' . $customer['id']; ?>"> <?= $customer['companyName']; ?></a></td>
                                     <td><?= $customer['contactPerson']; ?></td>
                                     <td><?= $customer['totalProjects']; ?></td>
                                 </tr>

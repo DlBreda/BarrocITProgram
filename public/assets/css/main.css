@@ -148,8 +148,8 @@ aside {
     float: left;
     width: 19.8%;
     height: 100vh;
-    border-right: 1px solid black;
     border-left: 1px solid black;
+    border-right: 1px solid black;
     padding-left: 0px;
     margin-right: 0px;
     position: relative;
@@ -350,6 +350,39 @@ main .invoices-content {
 }
 
 
+/* Customer */
+
+main h2 {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    height: 58px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    padding-top: 12px;
+}
+
+.customers-content {
+    padding: 0px;
+}
+
+.customers-content li {
+    list-style: none;
+    border-bottom: 1px solid black;
+    height: 58px;
+    font-size: 17px;
+    padding: 17px;
+}
+
+.edit-button {
+
+}
+
+.edit-button a {
+    text-decoration: none;
+    font-size: 17px;
+    padding: 17px;
+}
 
 
 
