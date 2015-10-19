@@ -28,6 +28,7 @@ if ( $q->rowCount() > 0 )
             <main>
                 <div class="invoices-top">
                     <h3>Customer overview</h3>
+                    <h3><a href="add.php"> Add </a></h3>
                     <form id="search" name="search">
                         <input name="search" type="text" placeholder="Search">
                         <button type="submit"><span class="glyphicon glyphicon-search"></span> </button>

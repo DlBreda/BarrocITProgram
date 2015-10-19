@@ -5,7 +5,12 @@
  * Date: 15-10-2015
  * Time: 10:12
  */
+
+$sql = "SELECT * FROM tbl_customers";
+
 ?>
+
+
 
 
 
