@@ -6,9 +6,9 @@
  * Time: 10:54
  */
 
-if ($_SESSION['id'] != '1')
+if ($_SESSION['id'] != '3')
 {
-    header('location: ');
+    header('location:' . HTTP_PATH . 'public/');
 }
 
 ?>
