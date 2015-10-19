@@ -43,7 +43,7 @@ if ( $q->rowCount() > 0 )
                         <?php if ( isset($customers) ): ?>
                             <?php foreach( $customers as $customer ): ?>
                                 <tr>
-                                    <td><?= $customer['companyName']; ?></td>
+                                    <td><a href="show.php"><?= $customer['companyName']; ?></a></td>
                                     <td><?= $customer['contactPerson']; ?></td>
                                     <td><?= $customer['totalProjects']; ?></td>
                                 </tr>
