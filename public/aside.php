@@ -12,7 +12,10 @@ switch ($_SESSION['id']) {
 
             <div class="bottom-aside">
                 <ul>
-                    <li><a href="">Log out</a></li>
+                    <form action="<?= HTTP_PATH . 'app/controllers/authController.php';?>" method="POST">
+                        <input name="type" type="hidden" value="logout"/>
+                        <input class="btn-logout" type="submit" value="Uitloggen"/>
+                    </form>
                     <li><?= $_SESSION['username'];?></li>
                 </ul>
             </div>

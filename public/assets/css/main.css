@@ -180,6 +180,7 @@ aside ul li a {
 
 aside ul li a:hover {
     cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -187,6 +188,26 @@ aside .bottom-aside {
     position: absolute;
     bottom: 0px;
     width: 100%;
+}
+
+.btn-logout {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    padding-left: 20px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-top: 1px solid black;
+    width: 100%;
+    text-align: left;
+
+}
+
+.btn-logout:hover {
+    color: #3333aa;
 }
 
 main {

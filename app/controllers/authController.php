@@ -7,10 +7,17 @@ switch($_POST['type']) {
         if (login($_POST['username'],
             $_POST['password'])){
 
+        } else {
+            header('location: ' . HTTP_PATH . '/public/');
         }
         break;
 
     case 'logout':
+            if (logout()) {
+                header('location: ' . HTTP_PATH . '/public/');
+            } else {
+
+            }
 
         break;
 
@@ -24,10 +31,11 @@ switch($_POST['type']) {
 function login($username, $password)
 {
     global $db;
+    global $messageBag;
 
     if (empty($username) || empty($password)) {
-        header('location: ' . HTTP_PATH . '/public/');
-        exit;
+        $messageBag->add('a', 'Een of meerdere verplichten velden zijn niet ingevuld.');
+        return false;
     }
 
     $sql = "SELECT * FROM tbl_users WHERE username = :username";
@@ -71,3 +79,13 @@ function login($username, $password)
     }
     header('location:');
 }
+
+
+function logout () {
+    global $messageBag;
+    unset($_SESSION['id']);
+    unset($_SESSION['username']);
+    $messageBag->add('s', 'U bent succesvol uitgelogd!');
+    return true;
+}
+
