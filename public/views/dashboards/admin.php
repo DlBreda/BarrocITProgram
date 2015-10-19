@@ -24,12 +24,18 @@ if ($_SESSION['id'] != '1')
     </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
-        <h1>Notificaties</h1>
-        <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eum repellat dolore laudantium molestiae ab vitae deleniti aliquid, dolorum accusantium laboriosam debitis asperiores cum vel eos placeat facilis velit. Eaque.
+        <div class="top-dashboard-finance">
+            <h1>Apointment dates</h1>
+        </div>
+        <div class="content finance-content">
+            <ul class="invoices">
+                <li ><a href="">klant - factuur - bedrag</a></li>
+                <li><a href="">klant - factuur - bedrag</a></li>
+                <li><a href="">klant - factuur - bedrag</a></li>
+                <li><a href="">klant - factuur - bedrag</a></li>
+            </ul>
         </div>
     </main>
 </div>
-
 <?php require_once __DIR__ . '/../../footer.php'; ?>
 
