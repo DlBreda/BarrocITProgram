@@ -158,7 +158,6 @@ aside {
 aside ul {
     margin-left: 0px;
     padding-left: 0px;
-    /*margin-top: 21.5px;*/
 }
 
 aside ul li {
@@ -202,6 +201,8 @@ main h1 {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 7px;
 }
 
 main .content {
@@ -217,9 +218,6 @@ h1 {
 
 /* Finance */
 
-.top-dashboard-finance h1 {
-    padding-bottom: 10px;
-}
 
 main .finance-content {
     padding-left: 0px !important;
