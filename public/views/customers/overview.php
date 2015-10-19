@@ -24,7 +24,7 @@ if ( $q->rowCount() > 0 )
             <div class="header-welcome">
             </div>
         </header>
-        <?php require_once __DIR__ . '/../aside.php'; ?>
+        <?php require_once __DIR__ . '/../../aside.php'; ?>
             <main>
                 <div class="invoices-top">
                     <h3>Customer overview</h3>

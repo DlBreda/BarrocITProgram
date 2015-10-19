@@ -20,9 +20,11 @@ if ($_SESSION['id'] != '2')
     </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
-        <h1>Notificaties</h1>
+        <h1>Notifications</h1>
         <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eum repellat dolore laudantium molestiae ab vitae deleniti aliquid, dolorum accusantium laboriosam debitis asperiores cum vel eos placeat facilis velit. Eaque.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eum repellat dolore
+            laudantium molestiae ab vitae deleniti aliquid, dolorum accusantium laboriosam debitis
+            asperiores cum vel eos placeat facilis velit. Eaque.
         </div>
     </main>
 </div>
