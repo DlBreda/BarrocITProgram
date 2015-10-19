@@ -8,8 +8,9 @@
 
 if ($_SESSION['id'] != '1')
 {
+    //dit slaat nergens op
 
-    header('location:' . HTTP_PATH . '/public/views/admin.php');
+    header('location:' . HTTP_PATH . '/public');
 
 }
 
