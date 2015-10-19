@@ -6,9 +6,9 @@
  * Time: 10:54
  */
 
-if ($_SESSION['id'] != '4')
+if ($_SESSION['id'] != '2')
 {
-    header('location:' . HTTP_PATH . '/public/views/sales.php');
+    header('location:' . HTTP_PATH . 'public/');
 }
 
 ?>

@@ -35,33 +35,35 @@ function login($username, $password)
     $q->bindParam(':username', $username);
     $q->execute();
 
-
     //Hier wordt gecheckt of het aantal rijen grooter is dan 0 of gelijk is aan 1
     // als dat zo is kom de username overeen want hierboven check je of
     // de username erin staat als dat zo is, is er 1 dus groter dan 0
     if ($q->rowcount() > 0) {
         $user = $q->fetch(PDO::FETCH_ASSOC);
 
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+
         if (password_verify($password, $user['password'])) {
             switch ((int)$user['id']) {
                 case 1:
-                    header('location:' . HTTP_PATH . '/public/views/dashboards/admin.php');
+                    header('location:' . HTTP_PATH . 'public/views/dashboards/admin.php');
                     break;
 
                 case 2:
-                    header('location:' . HTTP_PATH . '/public/views/dashboards/sales.php');
+                    header('location:' . HTTP_PATH . 'public/views/dashboards/sales.php');
                     break;
 
                 case 3:
-                    header('location:' . HTTP_PATH . '/public/views/dashboards/finance.php');
+                    header('location:' . HTTP_PATH . 'public/views/dashboards/finance.php');
                     break;
 
                 case 4:
-                    header('location:' . HTTP_PATH . '/public/views/dashboards/development.php');
+                    header('location:' . HTTP_PATH . 'public/views/dashboards/development.php');
                     break;
 
                 default:
-                    header('location:' . HTTP_PATH . '/public');
+                    header('location:' . HTTP_PATH . 'public/');
 
             }
             exit;

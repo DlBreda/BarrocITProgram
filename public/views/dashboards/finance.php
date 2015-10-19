@@ -8,7 +8,7 @@
 
 if ($_SESSION['id'] != '3')
 {
-    header('location:' . HTTP_PATH . '/public/views/finance.php');
+    header('location:' . HTTP_PATH . 'public/');
 }
 
 ?>
