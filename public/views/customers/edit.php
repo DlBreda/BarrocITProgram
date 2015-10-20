@@ -34,48 +34,57 @@ if (! in_array($_SESSION['id'], $allowed) ){
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
         <h2>Edit customer</h2>
-        <form class="col-md-6 col-md-push-3" action="" method="post">
+        <form class="col-md-6 col-md-push-3" action="<?= HTTP_PATH . '/app/controllers/customerController.php'?>" method="post">
 
 
             <input type="hidden" name="type" value="edit">
+            <input type="hidden" name="id" value="<?= $customer->id ?>">
                 <div class="form-group">
                     <label for="companyName">Company name: </label>
-                    <input class="form-control" type="text" value="<?= $customer->companyName ?>">
+                    <input class="form-control" name="companyName" type="text" value="<?= $customer->companyName ?>">
                 </div>
                 <div class="form-group">
                     <label for="adress">Adress: </label>
-                    <input class="form-control" type="text" value="<?= $customer->adress ?>">
+                    <input class="form-control" name="adress" type="text" value="<?= $customer->adress ?>">
                 </div>
                 <div class="form-group">
                     <label for="postalZip">Postal zipcode: </label>
-                    <input class="form-control" type="text" value="<?= $customer->postalZip ?>">
+                    <input class="form-control" name="postalZip" type="text" value="<?= $customer->postalZip ?>">
                 </div>
                 <div class="form-group">
                     <label for="adress2">Adress 2: </label>
-                    <input class="form-control" type="text" value="<?= $customer->adress2 ?>">
+                    <input class="form-control" name="adress2" type="text" value="<?= $customer->adress2 ?>">
                 </div>
                 <div class="form-group">
                     <label for="postalZip2">Postal zipcode 2: </label>
-                    <input class="form-control" type="text" value="<?= $customer->postalZip2 ?>">
+                    <input class="form-control" name="postalZip2" type="text" value="<?= $customer->postalZip2 ?>">
                 </div>
                 <div class="form-group">
                     <label for="contactPerson">Contact person: </label>
-                    <input class="form-control" type="text" value="<?= $customer->contactPerson ?>"
+                    <input class="form-control" name="contactPerson" type="text" value="<?= $customer->contactPerson ?>"
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone number: </label>
-                    <input class="form-control" type="text" value="<?= $customer->phoneNumber ?>">
+                    <input class="form-control" name="phoneNumber" type="text" value="<?= $customer->phoneNumber ?>">
                 </div>
                 <div class="form-group">
                     <label for="faxNumber">Fax number: </label>
-                    <input class="form-control" type="text" value="<?= $customer->faxNumber ?>"
+                    <input class="form-control" name="faxNumber" type="text" value="<?= $customer->faxNumber ?>"
                 </div>
                 <div class="form-group">
                     <label for="emailAdress">Email adress: </label>
-                    <input class="form-control" type="text" value="<?= $customer->emailAdress ?>"
+                    <input class="form-control" name="emailAdress" type="text" value="<?= $customer->emailAdress ?>"
+                </div>
+                <div class="form-group">
+                    <label for="creditWorthy">Credit worthy: </label>
+                    <input class="form-control" name="creditWorthy" type="text" value="<?= $customer->creditWorthy == 1 ? 'Yes' : "No" ; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="bankAccountNumber">Bank account number: </label>
+                    <input class="form-control" name="bankAccountNumber" type="text" value="<?= $customer->bankAccountNumber ?>">
                 </div>
 
-            <button>Edit</button>
+            <input type="submit" value="Edit">
 
         </form>
     </main>
