@@ -75,7 +75,7 @@ if (! in_array($_SESSION['id'], $allowed) ){
                     <input class="form-control" type="text" value="<?= $customer->emailAdress ?>"
                 </div>
 
-            <input type="edit" value="Edit">
+            <button>Edit</button>
 
         </form>
     </main>
