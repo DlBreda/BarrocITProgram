@@ -42,12 +42,12 @@
 
     <div class="form-group">
         <label for="phone">Adress</label>
-        <input type="text" name="adress" class="form-control"/>
+        <input type="text" name="adress" class="form-control" required/>
     </div>
 
     <div class="form-group">
         <label for="phone">Postal zip</label>
-        <input type="text" name="postalZip" class="form-control"/>
+        <input type="text" name="postalZip" class="form-control" required/>
     </div>
 
     <div class="form-group">
