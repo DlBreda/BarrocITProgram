@@ -8,6 +8,7 @@
 
 switch ($_POST['type']) {
     case 'add':
+        addUser($_POST);
         break;
 
     case 'edit':
@@ -42,4 +43,86 @@ function edit ($customer) {
     $q->execute();
 
     header('location:' . HTTP_PATH . 'public/views/customers/overview.php');
+}
+
+function addUser($in){
+
+    global $db;
+
+
+    $sql = "SELECT * FROM tbl_customers WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $id);
+    $q->execute();
+
+
+//rowcount counts the returned rows (used to check if the username is already in use)
+    if ( $q->rowCount() > 0 ) {
+        die('Username already exists');
+    }
+
+
+    $customer = $q->fetchAll();
+
+//    id
+//    companyName
+//    adress
+//    postalZip
+//    adress2
+//    postalZip2
+//    contactPerson
+//    firstName
+//    insertion
+//    lastName
+//    phoneNumber
+//    faxNumber
+//    emailAdress
+//    potentionalCustomer
+//    creditWorthy
+//    bankAccountNumber
+
+
+    $sql = "INSERT INTO tbl_customers (companyName, adress, postalZip, adress2, postalZip2, contactPerson,
+                                       firstName, insertion, lastName, phoneNumber, faxNumber,
+                                       emailAdress, potentionalCustomer, creditWorthy, bankAccountNumber)
+                VALUES (:companyName, :adress, :postalZip, :adress2, :postalZip2, :contactPerson,
+                                      :firstName, :insertion, :lastName, :phoneNumber, :faxNumber,
+                                      :emailAdress, :potentionalCustomer, :creditWorthy, :bankAccountNumber)";
+    $q = $db->prepare($sql);
+//    $q->bindParam(':firstName', $firstName);
+//    $q->bindParam(':lastName', $lastName);
+//    $q->bindParam(':companyName', $companyName);
+//    $q->bindParam(':adress', $adress);
+//    $q->bindParam(':postalZip', $postalZip);
+//    $q->bindParam(':adress2', $adress2);
+//    $q->bindParam(':postalZip2', $postalZip2);
+//    $q->bindParam(':contactPerson', $contactPerson);
+//    $q->bindParam(':phoneNumber', $phoneNumber);
+//    $q->bindParam(':faxNumber', $faxNumber);
+//    $q->bindParam(':emailAdress', $emailAdress);
+//    $q->bindParam(':creditWorthy', $creditWorthy);
+//    $q->bindParam(':bankAccountNumber', $bankAccountNumber);
+
+    $out = array();
+    foreach ( $in as $key => $value )
+    {
+        if ($key != 'type')
+        {
+            $out[':' . $key] = $value;
+        }
+    }
+//    $q->bindParam(':firstName', $i);
+//    $q->bindParam(':lastName', $i);
+//    $q->bindParam(':companyName', $i);
+//    $q->bindParam(':adress', $i);
+//    $q->bindParam(':postalZip', $i);
+//    $q->bindParam(':adress2', $i);
+//    $q->bindParam(':postalZip2', $i);
+//    $q->bindParam(':contactPerson', $i);
+//    $q->bindParam(':phoneNumber', $i);
+//    $q->bindParam(':faxNumber', $i);
+//    $q->bindParam(':emailAdress', $i);
+//    $q->bindParam(':creditWorthy', $i);
+//    $q->bindParam(':bankAccountNumber', $i);
+    $q->execute($out);
 }

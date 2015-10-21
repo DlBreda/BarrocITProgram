@@ -34,10 +34,10 @@ if ( $q->rowCount() > 0 )
                 ?>
                 <div class="invoices-top">
                     <h3>Customer overview</h3>
-                    <h3><a href="add.php"> Add </a></h3>
+                    <h3><a href="add.php"> Add custommer</a></h3>
                     <form id="search" name="search">
                         <input name="search" type="text" placeholder="Search">
-                        <button type="submit"><span class="glyphicon glyphicon-search"></span> </button>
+                        <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
                     </form>
                 </div>
                 <div class="content invoices-content">

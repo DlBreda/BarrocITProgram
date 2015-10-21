@@ -27,8 +27,8 @@ switch ($_SESSION['id']) {
         <aside>
             <ul>
                 <li><a href="">Dashboard</a></li>
-                <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Sales</a></li>
-                <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Sales</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Customers</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Projects</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/appointments/salesAppointments.php' ?>">Appointments</a></li>
             </ul>
