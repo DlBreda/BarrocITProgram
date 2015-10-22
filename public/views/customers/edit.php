@@ -77,7 +77,10 @@ if (! in_array($_SESSION['id'], $allowed) ){
                 </div>
                 <div class="form-group">
                     <label for="creditWorthy">Credit worthy: </label>
-                    <input class="form-control" name="creditWorthy" type="text" value="<?= $customer->creditWorthy == 1 ? 'Yes' : "No" ; ?>">
+                    </br>
+                    <input type="radio" name="creditWorthy" value="<?= $customer->creditWorthy == 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+                    </br>
+                    <input type="radio" name="creditWorthy" value="<?= $customer->creditWorthy == 0; ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
                 </div>
                 <div class="form-group">
                     <label for="bankAccountNumber">Bank account number: </label>

@@ -21,6 +21,11 @@
     </div>
 
     <div class="form-group">
+        <label for="phone">Insertion</label>
+        <input type="text" name="insertion" class="form-control"/>
+    </div>
+
+    <div class="form-group">
         <label for="lastname">Lastname</label>
         <input type="text" name="lastName" class="form-control" required/>
     </div>
@@ -66,11 +71,6 @@
     </div>
 
     <div class="form-group">
-        <label for="phone">Insertion</label>
-        <input type="text" name="insertion" class="form-control"/>
-    </div>
-
-    <div class="form-group">
         <label for="phone">Fax number</label>
         <input type="text" name="faxNumber" class="form-control"/>
     </div>
@@ -78,22 +78,22 @@
     <div class="form-group">
         <label for="phone">Potentional customer</label>
         </br>
-        <input type="radio" name="potentionalCustomer" value="Yes" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        <input type="radio" name="potentionalCustomer" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
         </br>
-        <input type="radio" name="potentionalCustomer" value="No" class=""/> <p style="float: left; margin-right: 16px;">No</p>
+        <input type="radio" name="potentionalCustomer" value="<?= 0; ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <div class="form-group">
         <label for="phone">Credit worthy</label>
         </br>
-        <input type="radio" name="creditWorthy" value="Yes" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        <input type="radio" name="creditWorthy" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
         </br>
-        <input type="radio" name="creditWorthy" value="No" class=""/> <p style="float: left; margin-right: 16px;">No</p>
+        <input type="radio" name="creditWorthy" value="<?= 0 ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <div class="form-group">
         <label for="phone">Bank account number</label>
-        <input type="text" name="bankAccountNumber" class="form-control"/>
+        <input type="text" name="bankAccountNumber" value="" class="form-control"/>
     </div>
 
     <input type="submit" value="Create user" class="btn btn-primary"/>
