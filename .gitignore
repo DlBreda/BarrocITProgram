@@ -7,3 +7,5 @@ app/init.php
 .idea/workspace.xml
 
 public/views/dashboards/admin.php
+
+public/views/dashboards/admin.php
