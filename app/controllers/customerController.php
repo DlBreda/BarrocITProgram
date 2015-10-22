@@ -8,7 +8,7 @@
 
 switch ($_POST['type']) {
     case 'add':
-        addUser($_POST);
+        addCustomer($_POST);
         break;
 
     case 'edit':
@@ -45,7 +45,7 @@ function edit ($customer) {
     header('location:' . HTTP_PATH . 'public/views/customers/overview.php');
 }
 
-function addUser($in){
+function addCustomer($in){
 
     global $db;
 
