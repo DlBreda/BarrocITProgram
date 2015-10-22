@@ -7,20 +7,30 @@
  */
 
 switch ($_POST['type']) {
-    case 'add':
-        if (addCustomer($_POST)){
-
-        };
-        if (addProject($_POST)){
-
-        }
+    case 'addCustomer':
+        addCustomer($_POST);
         break;
 
-    case 'edit':
-        if (editCustomer($_POST)){
-        }
+    case 'editCustomer':
+        editCustomer($_POST);
 
         break;
+
+    case 'addProject':
+        addProject($_POST);
+        break;
+
+//    case 'editProject':
+//        editProject($_POST);
+//        break;
+
+    case 'addInvoice':
+        addInvoice($_POST);
+        break;
+
+//    case 'editInvoice':
+//        editInvoice($_POST);
+//        break;
 
 }
 

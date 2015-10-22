@@ -13,7 +13,7 @@
 <form class="col-md-4 col-md-push-4" action="../../../app/controllers/customerController.php" method="POST">
     <h1 class="text-center"">Add Contact</h1>
 
-    <input type="hidden" name="type" value="add"/>
+    <input type="hidden" name="type" value="addCustomer"/>
 
     <div class="form-group">
         <label for="firstname">Firstname</label>
