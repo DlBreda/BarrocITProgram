@@ -27,7 +27,7 @@ if ( $q->rowCount() > 0 )
         <?php require_once __DIR__ . '/../../aside.php'; ?>
             <main>
                 <div class="invoices-top">
-                    <h3>Customer overview</h3>
+                    <h3>Projects overview</h3>
                     <form id="search" name="search">
                         <input name="search" type="text" placeholder="Search">
                         <button type="submit"><span class="glyphicon glyphicon-search"></span> </button>
