@@ -136,3 +136,32 @@ function addCustomer($in){
 
 }
 
+
+function addProject($in){
+
+    global $db;
+
+    $sql = "SELECT * FROM tbl_customers, tbl_projects WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $id);
+    $q->execute();
+
+    $sql = "INSERT INTO tbl_projects (id, customerID, description, createdAt, updatedAt, deletedAt, deadline,
+                  projectFinish, projectPrice, operatingSystem)
+            VALUES (:id, :customerID, :description, :createdAt, :updatedAt, :deletedAt, :deadline,
+                  :projectFinish, :projectPrice, :operatingSystem)";
+    $q = $db->prepare($sql);
+
+    $out = array();
+    foreach ( $in as $key => $value )
+    {
+        if ($key != 'type')
+        {
+            $out[':' . $key] = $value;
+        }
+    }
+
+    $q->execute($out);
+
+}
+
