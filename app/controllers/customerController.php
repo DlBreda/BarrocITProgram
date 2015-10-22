@@ -156,9 +156,9 @@ function addProject($in){
     $q->bindParam(':id', $id);
     $q->execute();
 
-    $sql = "INSERT INTO tbl_projects (id, customerID, description, createdAt, updatedAt, deletedAt, deadline,
+    $sql = "INSERT INTO tbl_projects (id, customerID, description, createdAt, updatedAt, DeletedAt, deadline,
                   projectFinish, projectPrice, operatingSystem)
-            VALUES (:id, :customerID, :description, :createdAt, :updatedAt, :deletedAt, :deadline,
+            VALUES (:id, :customerID, :description, :createdAt, :updatedAt, :DeletedAt, :deadline,
                   :projectFinish, :projectPrice, :operatingSystem)";
     $q = $db->prepare($sql);
 
