@@ -35,12 +35,18 @@
 
     <div class="form-group">
         <label for="phone">Paid</label>
-        <input type="text" name="paid" class="form-control"/>
+        </br>
+        <input type="radio" name="Paid" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        </br>
+        <input type="radio" name="Paid" value="<?= 0; ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <div class="form-group">
-        <label for="phone">Sent</label>
-        <input type="text" name="sent" class="form-control" required/>
+        <label for="phone">Send</label>
+        </br>
+        <input type="radio" name="Send" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        </br>
+        <input type="radio" name="Send" value="<?= 0 ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <input type="submit" value="Add invoice" class="btn btn-primary"/>
