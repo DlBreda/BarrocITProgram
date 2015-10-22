@@ -119,10 +119,9 @@ body {
 .login-border {
     margin: 0 auto;
     width: 360px;
-    height: 260px;
     background: rgba(192, 192, 192, 0.6);
     border-radius: 10px;
-    padding: 30px 40px 30px 40px;
+    padding: 30px 40px 60px 40px;
 }
 
 .main-login {
@@ -203,7 +202,6 @@ aside .bottom-aside {
     border-top: 1px solid black;
     width: 100%;
     text-align: left;
-
 }
 
 .btn-logout:hover {

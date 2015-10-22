@@ -125,4 +125,7 @@ function addUser($in){
 //    $q->bindParam(':creditWorthy', $i);
 //    $q->bindParam(':bankAccountNumber', $i);
     $q->execute($out);
+
+    header('location:' . HTTP_PATH . 'public/views/customers/overview.php');
+
 }
