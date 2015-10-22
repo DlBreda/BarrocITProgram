@@ -58,7 +58,7 @@ function addUser($in){
 
 //rowcount counts the returned rows (used to check if the username is already in use)
     if ( $q->rowCount() > 0 ) {
-        die('Username already exists');
+        die('Customer already exists');
     }
 
 
