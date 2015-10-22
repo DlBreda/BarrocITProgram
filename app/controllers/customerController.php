@@ -8,17 +8,23 @@
 
 switch ($_POST['type']) {
     case 'add':
-        addCustomer($_POST);
+        if (addCustomer($_POST)){
+
+        };
+        if (addProject($_POST)){
+
+        }
         break;
 
     case 'edit':
-        if (edit($_POST)){
+        if (editCustomer($_POST)){
         }
+
         break;
 
 }
 
-function edit ($customer) {
+function editCustomer ($customer) {
     global $db;
 
     $sql = "UPDATE tbl_customers SET
@@ -127,5 +133,33 @@ function addCustomer($in){
     $q->execute($out);
 
     header('location:' . HTTP_PATH . 'public/views/customers/overview.php');
+
+}
+
+function addProject($in){
+
+    global $db;
+
+    $sql = "SELECT * FROM tbl_customers, tbl_projects WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $id);
+    $q->execute();
+
+    $sql = "INSERT INTO tbl_projects (id, customerID, description, createdAt, updatedAt, deletedAt, deadline,
+                  projectFinish, projectPrice, operatingSystem)
+            VALUES (:id, :customerID, :description, :createdAt, :updatedAt, :deletedAt, :deadline,
+                  :projectFinish, :projectPrice, :operatingSystem)";
+    $q = $db->prepare($sql);
+
+    $out = array();
+    foreach ( $in as $key => $value )
+    {
+        if ($key != 'type')
+        {
+            $out[':' . $key] = $value;
+        }
+    }
+
+    $q->execute($out);
 
 }
