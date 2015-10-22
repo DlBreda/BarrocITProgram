@@ -179,19 +179,6 @@ function addInvoice($in) {
 
     global $db;
 
-    $sql = "SELECT * FROM tbl_customers WHERE id = :id";
-    $q = $db->prepare($sql);
-    $q->bindParam(':id', $id);
-    $q->execute();
-
-
-//rowcount counts the returned rows (used to check if the username is already in use)
-    if ( $q->rowCount() > 0 ) {
-        die('Customer already exists');
-    }
-
-
-    $customer = $q->fetchAll();
 
     $sql = "INSERT INTO tbl_invoices (createdAt, DeletedAt, description, price, paid, send)
                 VALUES (:createdAt, :DeletedAt, :description, :price, :paid, :send)";

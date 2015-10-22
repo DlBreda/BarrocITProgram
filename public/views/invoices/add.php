@@ -15,12 +15,16 @@
 
     <div class="form-group">
         <label for="firstname">Created at</label>
-        <input type="text" name="createdAt" class="form-control" required/>
+        <input type="datetime-local" name="createdAt" class="form-control" required/>
+        <script>
+            $("#startDate").val($.datepicker.formatDate("dd/mm/yy", new Date()));
+            $("#endDate").val($.datepicker.formatDate("dd/mm/yy", new Date()));
+        </script>
     </div>
 
     <div class="form-group">
         <label for="lastname">Deleted at</label>
-        <input type="text" name="deletedAt" class="form-control" required/>
+        <input type="datetime-local" name="deletedAt" class="form-control" required/>
     </div>
 
     <div class="form-group">
@@ -35,12 +39,18 @@
 
     <div class="form-group">
         <label for="phone">Paid</label>
-        <input type="text" name="paid" class="form-control"/>
+        </br>
+        <input type="radio" name="paid" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        </br>
+        <input type="radio" name="paid" value="<?= 0 ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <div class="form-group">
-        <label for="phone">Sent</label>
-        <input type="text" name="sent" class="form-control" required/>
+        <label for="phone">Send</label>
+        </br>
+        <input type="radio" name="send" value="<?= 1; ?>" class="" /> <p style="float: left; margin-right: 10px; margin-bottom: 0px;">Yes</p>
+        </br>
+        <input type="radio" name="send" value="<?= 0 ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
     </div>
 
     <input type="submit" value="Add invoice" class="btn btn-primary"/>
