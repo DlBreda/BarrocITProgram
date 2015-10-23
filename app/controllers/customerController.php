@@ -80,7 +80,7 @@ function addCustomer($in){
 
     $customer = $q->fetchAll();
 
-//    id
+//            id
 //    companyName
 //    adress
 //    postalZip
@@ -179,12 +179,17 @@ function addInvoice($in) {
 
     global $db;
 
+    $sql = "SELECT * FROM tbl_customers, tbl_projects WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $id);
+    $q->execute();
 
-    $sql = "INSERT INTO tbl_invoices (createdAt, DeletedAt, description, price, paid, send)
-                VALUES (:createdAt, :DeletedAt, :description, :price, :paid, :send)";
+    $sql = "INSERT INTO tbl_invoices (description, price, paid, send)
+                VALUES (:description, :price, :paid, :send)";
     $q = $db->prepare($sql);
 
     $out = array();
+
     foreach ( $in as $key => $value )
     {
         if ($key != 'type')
@@ -192,6 +197,9 @@ function addInvoice($in) {
             $out[':' . $key] = $value;
         }
     }
+
+    $q->execute($out);
+
 
 
 
