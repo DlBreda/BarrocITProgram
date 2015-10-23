@@ -14,20 +14,6 @@
     <input type="hidden" name="type" value="addInvoice"/>
 
     <div class="form-group">
-        <label for="firstname">Created at</label>
-        <input type="datetime-local" name="createdAt" class="form-control" required/>
-        <script>
-            $("#startDate").val($.datepicker.formatDate("dd/mm/yy", new Date()));
-            $("#endDate").val($.datepicker.formatDate("dd/mm/yy", new Date()));
-        </script>
-    </div>
-
-    <div class="form-group">
-        <label for="lastname">Deleted at</label>
-        <input type="datetime-local" name="deletedAt" class="form-control" required/>
-    </div>
-
-    <div class="form-group">
         <label for="email">Description</label>
         <input type="text" name="description" class="form-control" required/>
     </div>
