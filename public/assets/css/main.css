@@ -384,6 +384,16 @@ main h2 {
 
 
 
+/* Development*/
+.invoices .li-development {
+    height: 29px;
+    padding: 4px;
+}
+
+.th-project-header {
+    text-align: center;
+    font-size: 20px;
+}
 
 
 

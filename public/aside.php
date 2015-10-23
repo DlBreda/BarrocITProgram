@@ -73,9 +73,7 @@ switch ($_SESSION['id']) {
         <aside>
             <ul>
                 <li><a href="<?= HTTP_PATH . 'public/vieuws/dashboards/development.php' ?>">Dashboard</a></li>
-                <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>"></a></li>
-                <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Sales</a></li>
-                <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Projecten</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/appointments/developmentAppointments.php' ?>">Appointments</a></li>
             </ul>
 
