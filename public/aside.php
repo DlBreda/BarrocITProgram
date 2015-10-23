@@ -3,7 +3,7 @@ switch ($_SESSION['id']) {
     case 1: ?>
         <aside>
             <ul>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="<?= HTTP_PATH . 'public//views/dashboards/admin.php' ?>">Dashboard</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Custommers</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Projects</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
@@ -26,7 +26,7 @@ switch ($_SESSION['id']) {
     case 2:?>
         <aside>
             <ul>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/views/dashboards/sales.php' ?>">Dashboard</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Customers</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Projects</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
@@ -49,7 +49,7 @@ switch ($_SESSION['id']) {
     case 3:?>
         <aside>
             <ul>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/vieuws/dashboards/finance.php/' ?>">Dashboard</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Sales</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Sales</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
@@ -72,7 +72,7 @@ switch ($_SESSION['id']) {
     case 4:?>
         <aside>
             <ul>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="<?= HTTP_PATH . 'public/vieuws/dashboards/development.php' ?>">Dashboard</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/customers/overview.php' ?>">Sales</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/projects/overview.php' ?>">Sales</a></li>
                 <li><a href="<?= HTTP_PATH . 'public/views/invoices/overview.php' ?>">Invoices</a></li>
