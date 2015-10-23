@@ -21,10 +21,21 @@ if ($_SESSION['id'] != '2')
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
         <h1>Notifications</h1>
-        <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eum repellat dolore
-            laudantium molestiae ab vitae deleniti aliquid, dolorum accusantium laboriosam debitis
-            asperiores cum vel eos placeat facilis velit. Eaque.
+        <div class="content invoices-content">
+            <table class="table table-bordered invoices invoices-clients">
+                <tr>
+                    <th>Afspraken</th>
+                    <th>Klanten</th>
+                </tr>
+                <?php if ( isset($customers) ): ?>
+                    <?php foreach( $customers as $customer ): ?>
+                        <tr>
+                            <td><a href="show.php"> <?= $customer['companyName']; ?></a></td>
+                            <td><?= $customer['contactPerson']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </table>
         </div>
     </main>
 </div>

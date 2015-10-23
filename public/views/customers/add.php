@@ -1,14 +1,11 @@
-<?php
+<?php require_once __DIR__ . '/../../header.php';
 /**
  * Created by PhpStorm.
- * User: K
- * Date: 15-10-2015
- * Time: 10:13
+ * User: Maarten
+ * Date: 23-10-2015
+ * Time: 9:39
  */
 ?>
-
-<?php require_once __DIR__ . '/../../header.php'; ?>
-
 
 <form class="col-md-4 col-md-push-4" action="../../../app/controllers/customerController.php" method="POST">
     <h1 class="text-center"">Add Contact</h1>
@@ -96,7 +93,7 @@
         <input type="text" name="bankAccountNumber" value="" class="form-control"/>
     </div>
 
-    <input type="submit" value="Create user" class="btn btn-primary"/>
+    <input type="submit" value="Create user" class="btn btn-success"/>
 </form>
 
 
