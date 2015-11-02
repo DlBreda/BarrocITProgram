@@ -213,3 +213,8 @@ function addInvoice($in) {
 
 }
 
+function addAppointment() {
+
+
+
+}
