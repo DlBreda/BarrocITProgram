@@ -395,6 +395,29 @@ main h2 {
     font-size: 20px;
 }
 
+.projects {
+    width: 50%;
+    float: left;
+    border-right: 1px solid black;
+}
+
+.projects:last-child {
+    border-right: none;
+}
+
+.projects-content {
+    padding: 0px;
+}
+
+.projects-content li {
+    list-style: none;
+    border-bottom: 1px solid black;
+    height: 58px;
+    font-size: 14px;
+    padding: 14px;
+}
+
+
 
 
 
