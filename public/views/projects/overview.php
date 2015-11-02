@@ -1,10 +1,24 @@
 <?php require_once __DIR__ . '/../../header.php';
 
-$sql = "SELECT tbl_customers.id, companyName, contactPerson, count(tbl_projects.id) as totalProjects
+if (isset ($_GET['type']) && $_GET['type'] == 'inactive' ) {
+    //inatieve klanten
+    $sql = "SELECT tbl_customers.id, companyName, contactPerson, tbl_projects.deadline as deadline, count(tbl_projects.id) as totalProjects
             FROM tbl_customers
             LEFT JOIN tbl_projects
             ON tbl_projects.customerID = tbl_customers.id
-            GROUP BY tbl_customers.id";
+            GROUP BY tbl_customers.id
+            HAVING deadline < NOW() || totalProjects = 0";
+} else {
+    //actieve klanten
+    $sql = "SELECT tbl_customers.id, companyName, contactPerson, tbl_projects.deadline as deadline, count(tbl_projects.id) as totalProjects
+            FROM tbl_customers
+            LEFT JOIN tbl_projects
+            ON tbl_projects.customerID = tbl_customers.id
+            GROUP BY companyName
+            HAVING `deadline` > NOW()" ;
+}
+
+
 $q = $db->query($sql);
 if ( $q->rowCount() > 0 )
 {
@@ -50,6 +64,16 @@ if ( $q->rowCount() > 0 )
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </table>
+
+                    <div class="active-inactive">
+
+                        <?php if (isset($_GET['type']) && $_GET['type'] == 'inactive'): ?>
+                            <a href="overview.php">View active customers</a>
+                        <?php else: ?>
+                            <a href="overview.php?type=inactive">View inactive customers</a>
+                        <?php endif; ?>
+                    </div>
+
                 </div>
             </main>
     </div>

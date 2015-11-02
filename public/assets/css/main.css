@@ -107,6 +107,11 @@ body {
 
 }
 
+.container a {
+    color: black;
+    font-size: 15px;
+}
+
 .container-login {
     background: url(../../img/background.jpg) no-repeat;
     margin-top: 0px;
@@ -234,6 +239,11 @@ h1 {
     color: red;
 }
 
+.active-inactive a {
+    margin-left: 10px;
+    color: darkblue;
+}
+
 
 /* Finance */
 
@@ -247,10 +257,6 @@ ul.invoices {
     padding: 0px;
 }
 
-.invoices a {
-    color: black;
-    font-size: 15px;
-}
 
 .invoices li {
     border-bottom: 1px solid black;
