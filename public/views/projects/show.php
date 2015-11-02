@@ -8,8 +8,8 @@
 
 
 $sql =
-    "SELECT tbl_customers.*, tbl_projects.* FROM tbl_customers
-    INNER JOIN tbl_projects
+    "SELECT tbl_customers.*, tbl_projects.description, tbl_projects.id as project_id FROM tbl_customers
+    LEFT JOIN tbl_projects
     ON tbl_projects.customerID = tbl_customers.id
     WHERE tbl_customers.id = :id";
 
@@ -18,6 +18,7 @@ $q->bindParam(':id', $_GET['id']);
 $q->execute();
 
 $data = $q->fetchAll(PDO::FETCH_OBJ);
+
 $customer = $data[0];
 $projects = $data;
 
@@ -45,7 +46,7 @@ $projects = $data;
             <li>Contact person: <?= $customer->contactPerson ?> </li>
             <li>Phone number: <?= $customer->phoneNumber ?> </li>
             <li>Fax number: <?= empty ($customer->faxNumber) ? '<i> no fax number </i>' : $customer->faxNumber  ?> </li>
-            <li>Email adress: <?= $customer->emailAdress ?> </li>
+            <li>Email adress: <?= empty ($customer->emailAdress) ? '<i> no email adress </i>' : $customer->emailAdress ?> </li>
             <?php // voor ? is check, na ? is 'true' : 'false'  ?>
             <li>Credit worthy: <?= $customer->creditWorthy == 1 ? 'Yes' : "No" ; ?> </li>
             <li>Bank account number: <?= $customer->bankAccountNumber ?> </li>
@@ -58,12 +59,15 @@ $projects = $data;
         <ul class="projects-content">
             <?php
 
-                foreach($projects as $project){
+                foreach ($projects as $project) {
+                    if (!empty($project->description)) {
+                        echo '<li><a href="showProject.php?id=' . $project->project_id . ' "> ' . $project->description . '</a></li>';
+                    }
 
-                    echo '<li><a href="showProject.php"> ' . $project->description . '</a></li>';
-
+                    if (empty($project->description)) {
+                        echo "No projects";
+                    }
                 }
-
             ?>
         </ul>
     </div>
