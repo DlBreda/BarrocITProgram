@@ -97,9 +97,11 @@ textarea {
 
 header {
     text-align: center;
-    padding-top: 20px;
-    margin-bottom: 20px;
 }
+
+/*header .header-welcome img {*/
+    /*width: 1440px;*/
+/*}*/
 
 body {
     margin-top: 0px;
@@ -150,7 +152,7 @@ body {
 
 aside {
     float: left;
-    width: 19.8%;
+    width: 20%;
     height: 100vh;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -192,6 +194,10 @@ aside .bottom-aside {
     position: absolute;
     bottom: 0px;
     width: 100%;
+}
+
+aside .bottom-aside ul {
+    margin-bottom: 0px;
 }
 
 .btn-logout {
@@ -251,6 +257,10 @@ h1 {
 main .finance-content {
     padding-left: 0px !important;
     width: 100%;
+}
+
+.top-dashboard-finance h1{
+    margin-top: 0;
 }
 
 ul.invoices {

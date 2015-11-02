@@ -21,11 +21,11 @@ $project = $q->fetch(PDO::FETCH_OBJ);
 
 
     <div class="container">
-    <header>
-        <div class="header-welcome">
-
-        </div>
-    </header>
+        <header>
+            <div class="header-welcome">
+                <img src="../../img/banner.jpg" alt="banner">
+            </div>
+        </header>
 <?php require_once __DIR__ . '/../../aside.php'; ?>
         <main>
             <div class="show-project">

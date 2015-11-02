@@ -28,7 +28,7 @@ if (! in_array($_SESSION['id'], $allowed) ){
 <div class="container">
     <header>
         <div class="header-welcome">
-
+            <img src="../../img/banner.jpg" alt="banner">
         </div>
     </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
