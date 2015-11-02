@@ -20,7 +20,8 @@ if ($_SESSION['id'] != '2')
     </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
-        <h1>Notifications</h1>
+        <h1 class="main-n">Notifications</h1>
+            <div style="float: right;" id="time"></div>
         <div class="content invoices-content">
             <table class="table table-bordered invoices invoices-clients">
                 <tr>
@@ -39,5 +40,6 @@ if ($_SESSION['id'] != '2')
         </div>
     </main>
 </div>
+
 
 <?php require_once __DIR__ . '/../../footer.php'; ?>
