@@ -423,6 +423,18 @@ main h2 {
     padding: 14px;
 }
 
+.show-project ul {
+    padding: 0px;
+}
+
+.show-project li {
+    border-bottom: 1px solid black;
+    list-style: none;
+    height: 42px;
+    padding: 10px;
+    font-size: 15px;
+}
+
 
 
 
