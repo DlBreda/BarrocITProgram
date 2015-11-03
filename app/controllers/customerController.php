@@ -178,8 +178,8 @@ function addProject($in){
 
 
     $q->execute($out);
-
-    header('location:' . HTTP_PATH . 'public/views/projects/show.php');
+    $location = 'location:' . HTTP_PATH . "public/views/projects/show.php?id=" . $in['customerID'];
+    header($location);
 }
 
 function addInvoice($in) {
