@@ -52,6 +52,14 @@ if ( $q->rowCount() > 0 )
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </table>
+                    <div class="active-inactive">
+
+                        <?php if (isset($_GET['type']) && $_GET['type'] == 'inactive'): ?>
+                            <a href="overview.php">View active customers</a>
+                        <?php else: ?>
+                            <a href="overview.php?type=inactive">View inactive customers</a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </main>
     </div>

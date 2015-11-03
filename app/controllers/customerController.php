@@ -151,15 +151,20 @@ function addProject($in){
 
     global $db;
 
-    $sql = "SELECT * FROM tbl_customers, tbl_projects WHERE id = :id";
+    $sql = "SELECT * FROM tbl_customers WHERE id = :id";
     $q = $db->prepare($sql);
-    $q->bindParam(':id', $id);
+    $q->bindParam(':id', $in['customerID']);
     $q->execute();
 
-    $sql = "INSERT INTO tbl_projects (id, customerID, description, createdAt, updatedAt, DeletedAt, deadline,
-                  projectFinish, projectPrice, operatingSystem)
-            VALUES (:id, :customerID, :description, :createdAt, :updatedAt, :DeletedAt, :deadline,
-                  :projectFinish, :projectPrice, :operatingSystem)";
+    if ( $q->rowCount() == 0 )
+    {
+        die( 'Klant bestaat niet!' );
+    }
+
+    $sql = "INSERT INTO tbl_projects (customerID, description, deadline,
+                   projectPrice, operatingSystem)
+            VALUES (:customerID, :description, :deadline,
+                  :projectPrice, :operatingSystem)";
     $q = $db->prepare($sql);
 
     $out = array();
@@ -171,8 +176,10 @@ function addProject($in){
         }
     }
 
+
     $q->execute($out);
 
+    header('location:' . HTTP_PATH . 'public/views/projects/show.php');
 }
 
 function addInvoice($in) {
