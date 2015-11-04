@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="<?= HTTP_PATH . 'public/assets/css/main.css';?>">
     <link rel="stylesheet" href="<?= HTTP_PATH . 'public/assets/css/normalize.css';?>">
+    <link rel="stylesheet" href="<?= HTTP_PATH . 'public/assets/css/font-awesome.css';?>">
+    <link rel="stylesheet" href="<?= HTTP_PATH . 'public/assets/css/font-awesome.min.css';?>">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
