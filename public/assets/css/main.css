@@ -109,6 +109,12 @@ body {
 
 }
 
+/*DIT BLIJFT NIET ZO!*/
+body {
+    background: url(../../img/texture.jpg);
+}
+/*-----------------------*/
+
 .container a {
     color: black;
     font-size: 15px;
@@ -132,6 +138,7 @@ body {
 }
 
 .main-login {
+    margin-top: 30px;
     width: 100%;
 }
 
@@ -191,6 +198,11 @@ aside ul li a {
 aside ul li a:hover {
     cursor: pointer;
     text-decoration: none;
+
+}
+
+aside ul li:active {
+    background: #61615d !important;
 }
 
 
@@ -233,6 +245,8 @@ main {
     float: left;
     width: 80%;
     border-right: 1px solid black;
+    background: #eeeeee;
+    height: 100vh;
 }
 
 main h1 {
@@ -243,6 +257,7 @@ main h1 {
     margin-bottom: 0px;
     margin-top: 0px;
     padding-bottom: 7px;
+    color: #c1c1c1;
 }
 
 main .content {
@@ -402,6 +417,7 @@ main h2 {
     height: 58px;
     font-size: 17px;
     padding: 17px;
+    background: white;
 }
 
 .edit-button {
