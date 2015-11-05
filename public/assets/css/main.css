@@ -151,8 +151,6 @@ body {
     margin-top: 20px;
 }
 
-
-
 .container {
     overflow: hidden;
 }
@@ -160,6 +158,7 @@ body {
 aside {
     float: left;
     width: 20%;
+    height: 100vh;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding-left: 0px;
@@ -245,7 +244,6 @@ main {
     width: 80%;
     border-right: 1px solid black;
     background: #eeeeee;
-    height: 100vh;
 }
 
 main h1 {
