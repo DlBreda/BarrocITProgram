@@ -111,7 +111,7 @@ body {
 
 /*DIT BLIJFT NIET ZO!*/
 body {
-    background: url(../../img/texture.jpg);
+    background: url(../../img/texture.png);
 }
 /*-----------------------*/
 
@@ -160,7 +160,7 @@ body {
 aside {
     float: left;
     width: 20%;
-    height: 100vh;
+    min-height: 82vh;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding-left: 0px;
@@ -246,7 +246,7 @@ main {
     width: 80%;
     border-right: 1px solid black;
     background: #eeeeee;
-    height: 100vh;
+    height: 82vh;
 }
 
 main h1 {
