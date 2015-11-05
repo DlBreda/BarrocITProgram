@@ -1,5 +1,7 @@
 <?php require_once __DIR__ . '/../../header.php';
 
+
+
 $sql = "SELECT companyName, contactPerson, count(tbl_projects.id) as totalProjects
             FROM tbl_customers
             LEFT JOIN tbl_projects
