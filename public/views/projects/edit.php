@@ -6,12 +6,14 @@
  * Time: 10:13
  */
 
-$sql = "SELECT * FROM tbl_customers WHERE id = :id";
+$sql = "SELECT * FROM tbl_projects WHERE id = :id";
 $q = $db->prepare($sql);
 $q->bindParam(':id', $_GET['id']);
 $q->execute();
 
-$customer = $q->fetch(PDO::FETCH_OBJ);
+$project = $q->fetch(PDO::FETCH_OBJ);
+var_dump($_GET);
+var_dump($project);
 
 $allowed = [1,2];
 
@@ -41,22 +43,22 @@ if (! in_array($_SESSION['id'], $allowed) ){
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" name="description" class="form-control" required/>
+                <input type="text" name="description" class="form-control" value="<?= $project->description ?>" required/>
             </div>
 
             <div class="form-group">
                 <label for="deadline">Deadline</label>
-                <input type="text" name="deadline" class="form-control"/>
+                <input type="text" name="deadline" class="form-control" value="<?= $project->deadline ?>"/>
             </div>
 
             <div class="form-group">
                 <label for="projectPrice">Project price</label>
-                <input type="text" name="projectPrice" class="form-control" required/>
+                <input type="text" name="projectPrice" class="form-control" value="<?= $project->projectPrice ?>" required/>
             </div>
 
             <div class="form-group">
                 <label for="operatingSystem">Operating system</label>
-                <input type="text" name="operatingSystem" class="form-control" required/>
+                <input type="text" name="operatingSystem" class="form-control" value="<?= $project->operatingSystem ?>" required/>
             </div>
 
 
