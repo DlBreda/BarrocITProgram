@@ -13,17 +13,16 @@ switch ($_POST['type']) {
 
     case 'editCustomer':
         editCustomer($_POST);
-
         break;
 
     case 'addProject':
         addProject($_POST);
         break;
 
-//    case 'editProject':
-//        editProject($_POST);
-//        break;
-
+    case 'editProject':
+        editProject($_POST);
+        break;
+    
     case 'addInvoice':
         addInvoice($_POST);
         break;
@@ -165,6 +164,44 @@ function addProject($in){
                    projectPrice, operatingSystem)
             VALUES (:customerID, :description, :deadline,
                   :projectPrice, :operatingSystem)";
+    $q = $db->prepare($sql);
+
+    $out = array();
+    foreach ( $in as $key => $value )
+    {
+        if ($key != 'type')
+        {
+            $out[':' . $key] = $value;
+        }
+    }
+
+
+    $q->execute($out);
+    $location = 'location:' . HTTP_PATH . "public/views/projects/show.php?id=" . $in['customerID'];
+    header($location);
+}
+
+function editProject ($in) {
+    global $db;
+
+    $sql = "SELECT * FROM tbl_customers WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $in['customerID']);
+    $q->execute();
+
+    if ( $q->rowCount() == 0 )
+    {
+        die( 'Klant bestaat niet!' );
+    }
+//    UPDATE tbl_customers SET
+//            companyName = :companyName, adress = :adress, postalZip = :postalZip, adress2 = :adress2,
+//            postalZip2 = :postalZip2, contactPerson = :contactPerson, phoneNumber = :phoneNumber,
+//            faxNumber = :faxNumber, emailAdress = :emailAdress, creditWorthy = :creditWorthy,
+//            bankAccountNumber = :bankAccountNumber WHERE id = :id"
+
+    $sql = "UPDATE tbl_projects SET customerID = :customerID, description = :description, deadline = :deadline,
+                                    projectPrice = :projectPrice, operatingSystem = :operatingSystem";
+
     $q = $db->prepare($sql);
 
     $out = array();

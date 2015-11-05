@@ -44,6 +44,9 @@ $project = $q->fetch(PDO::FETCH_OBJ);
                     <li>Project price: <?= $project->projectPrice ?> </li>
                     <li>Operating system: <?= $project->operatingSystem ?> </li>
                 </ul>
+
+                <li><a href="http://localhost/barrocitprogram/BarrocITProgram/public/views/projects/edit.php">Edit Project</a></li>
+
             </div>
         </main>
     </div>

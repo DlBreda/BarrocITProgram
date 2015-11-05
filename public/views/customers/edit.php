@@ -43,38 +43,7 @@ if (! in_array($_SESSION['id'], $allowed) ){
                     <label for="companyName">Company name: </label>
                     <input class="form-control" name="companyName" type="text" value="<?= $customer->companyName ?>">
                 </div>
-                <div class="form-group">
-                    <label for="adress">Adress: </label>
-                    <input class="form-control" name="adress" type="text" value="<?= $customer->adress ?>">
-                </div>
-                <div class="form-group">
-                    <label for="postalZip">Postal zipcode: </label>
-                    <input class="form-control" name="postalZip" type="text" value="<?= $customer->postalZip ?>">
-                </div>
-                <div class="form-group">
-                    <label for="adress2">Adress 2: </label>
-                    <input class="form-control" name="adress2" type="text" value="<?= $customer->adress2 ?>">
-                </div>
-                <div class="form-group">
-                    <label for="postalZip2">Postal zipcode 2: </label>
-                    <input class="form-control" name="postalZip2" type="text" value="<?= $customer->postalZip2 ?>">
-                </div>
-                <div class="form-group">
-                    <label for="contactPerson">Contact person: </label>
-                    <input class="form-control" name="contactPerson" type="text" value="<?= $customer->contactPerson ?>"
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber">Phone number: </label>
-                    <input class="form-control" name="phoneNumber" type="text" value="<?= $customer->phoneNumber ?>">
-                </div>
-                <div class="form-group">
-                    <label for="faxNumber">Fax number: </label>
-                    <input class="form-control" name="faxNumber" type="text" value="<?= $customer->faxNumber ?>"
-                </div>
-                <div class="form-group">
-                    <label for="emailAdress">Email adress: </label>
-                    <input class="form-control" name="emailAdress" type="text" value="<?= $customer->emailAdress ?>"
-                </div>
+
                 <div class="form-group">
                     <label for="creditWorthy">Credit worthy: </label>
                     </br>
