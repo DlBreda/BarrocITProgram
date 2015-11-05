@@ -160,7 +160,7 @@ body {
 aside {
     float: left;
     width: 20%;
-    min-height: 82vh;
+    min-height: 100vh;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding-left: 0px;
@@ -246,7 +246,7 @@ main {
     width: 80%;
     border-right: 1px solid black;
     background: #eeeeee;
-    height: 82vh;
+    height: 100vh;
 }
 
 main h1 {
