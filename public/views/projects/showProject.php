@@ -45,7 +45,7 @@ $project = $q->fetch(PDO::FETCH_OBJ);
                     <li>Operating system: <?= $project->operatingSystem ?> </li>
                 </ul>
 
-                <li><a href="http://localhost/barrocitprogram/BarrocITProgram/public/views/projects/edit.php?id=<?= $project->id ?>">Edit Project</a></li>
+                <li><a href="http://localhost/barrocitprogram/BarrocITProgram/public/views/projects/edit.php?id=<?= $project->id  ?>">Edit Project</a></li>
 
             </div>
         </main>
