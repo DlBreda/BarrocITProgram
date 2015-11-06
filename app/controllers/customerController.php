@@ -184,23 +184,10 @@ function addProject($in){
 function editProject ($in) {
     global $db;
 
-    $sql = "SELECT * FROM tbl_customers WHERE id = :id";
-    $q = $db->prepare($sql);
-    $q->bindParam(':id', $in['customerID']);
-    $q->execute();
 
-    if ( $q->rowCount() == 0 )
-    {
-        die( 'Klant bestaat niet!' );
-    }
-//    UPDATE tbl_customers SET
-//            companyName = :companyName, adress = :adress, postalZip = :postalZip, adress2 = :adress2,
-//            postalZip2 = :postalZip2, contactPerson = :contactPerson, phoneNumber = :phoneNumber,
-//            faxNumber = :faxNumber, emailAdress = :emailAdress, creditWorthy = :creditWorthy,
-//            bankAccountNumber = :bankAccountNumber WHERE id = :id"
-
-    $sql = "UPDATE tbl_projects SET customerID = :customerID, description = :description, deadline = :deadline,
-                                    projectPrice = :projectPrice, operatingSystem = :operatingSystem";
+    $sql = "UPDATE tbl_projects SET description = :description, deadline = :deadline,
+                                    projectPrice = :projectPrice, operatingSystem = :operatingSystem
+                                    WHERE id = :id";
 
     $q = $db->prepare($sql);
 
@@ -213,9 +200,9 @@ function editProject ($in) {
         }
     }
 
-
     $q->execute($out);
-    $location = 'location:' . HTTP_PATH . "public/views/projects/show.php?id=" . $in['customerID'];
+
+    $location = 'location:' . HTTP_PATH . "public/views/projects/showProject.php?id=" . $in['id'];
     header($location);
 }
 

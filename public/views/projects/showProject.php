@@ -45,7 +45,8 @@ $project = $q->fetch(PDO::FETCH_OBJ);
                     <li>Operating system: <?= $project->operatingSystem ?> </li>
                 </ul>
 
-                <li><a href="edit.php?id=' <?= $project->id ?>">Edit Project</a></li>
+                <li><a href="edit.php?id=<?= $project->id ?>">Edit Project</a></li>
+                <li><a href="overview.php">Back to overview</a></li>
 
             </div>
         </main>

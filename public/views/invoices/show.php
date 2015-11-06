@@ -8,7 +8,7 @@
 
 
 $sql =
-    "SELECT tbl_customers.*, tbl_invoices.* tbl_projects.description, tbl_projects.id as project_id FROM tbl_customers, tbl_invoices
+    "SELECT tbl_customers.*, tbl_projects.description, tbl_projects.id as project_id FROM tbl_customers
     LEFT JOIN tbl_projects
     ON tbl_projects.customerID = tbl_customers.id
     WHERE tbl_customers.id = :id";
@@ -21,6 +21,7 @@ $data = $q->fetchAll(PDO::FETCH_OBJ);
 
 $customer = $data[0];
 $projects = $data;
+
 
 ?>
 
@@ -61,7 +62,7 @@ $projects = $data;
 
                 foreach ($projects as $project) {
                     if (!empty($project->description)) {
-                        echo '<li><a href="showInvoice.php?id=' . $project->project_id . ' "> ' . $project->description . '</a></li>';
+                        echo '<li><a href="showInvoice.php?id=' . $project->id . ' "> ' . $project->description . '</a></li>';
                     }
 
                     if (empty($project->description)) {

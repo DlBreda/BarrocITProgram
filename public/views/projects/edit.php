@@ -37,7 +37,7 @@ if (! in_array($_SESSION['id'], $allowed) ){
         <form class="col-md-4 col-md-push-4" action="<?= HTTP_PATH . '/app/controllers/customerController.php'?>" method="POST">
 
             <input type="hidden" name="type" value="editProject"/>
-            <input type="hidden" name="customerID" value="<?= $project->customerID; ?>">
+            <input type="hidden" name="id" value="<?= $project->id; ?>">
 
             <div class="form-group">
                 <label for="description">Description</label>
