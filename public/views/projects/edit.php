@@ -12,8 +12,6 @@ $q->bindParam(':id', $_GET['id']);
 $q->execute();
 
 $project = $q->fetch(PDO::FETCH_OBJ);
-var_dump($_GET);
-var_dump($project);
 
 $allowed = [1,2];
 
@@ -36,10 +34,10 @@ if (! in_array($_SESSION['id'], $allowed) ){
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
         <h2>Edit project</h2>
-        <form class="col-md-4 col-md-push-4" action="../../../app/controllers/customerController.php" method="POST">
+        <form class="col-md-4 col-md-push-4" action="<?= HTTP_PATH . '/app/controllers/customerController.php'?>" method="POST">
 
-            <input type="hidden" name="type" value="addProject"/>
-            <input type="hidden" name="customerID" value="<?= $_GET['id']; ?>">
+            <input type="hidden" name="type" value="editProject"/>
+            <input type="hidden" name="customerID" value="<?= $project->customerID; ?>">
 
             <div class="form-group">
                 <label for="description">Description</label>
