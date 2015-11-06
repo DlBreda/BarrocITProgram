@@ -23,7 +23,7 @@ if ($_SESSION['id'] != '2')
     </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
-        <div class="top-appointments-sales">
+        <div class="top-dashboard">
             <h1>Appointment</h1>
         </div>
         <div class="content appointments-sales">
