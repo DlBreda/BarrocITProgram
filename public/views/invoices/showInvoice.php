@@ -6,7 +6,7 @@
  * Time: 10:09
  */
 
-$sql = "SELECT tbl_projects.*, tbl_customers.companyName, tbl_invoices.* FROM tbl_projects, tbl_invoices
+$sql = "SELECT tbl_projects.*, tbl_customers.companyName FROM tbl_projects
         LEFT JOIN tbl_customers
         ON tbl_projects.customerID = tbl_customers.id
         WHERE tbl_projects.id = :id";
