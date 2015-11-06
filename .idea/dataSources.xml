@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2839790396">
-    <data-source source="LOCAL" name="MySQL - mydb@localhost" uuid="aa286bdb-31a2-491f-9b1c-31495035d6d9">
+  <component name="DataSourceManagerImpl" format="xml" hash="1230720996">
+    <data-source source="LOCAL" name="MySQL - barrocit@localhost" uuid="5501f913-b01c-44d2-afe2-1c8c39085535">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:8889/mydb</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/barrocit</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
