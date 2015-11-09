@@ -6,7 +6,9 @@
  * Time: 10:09
  */
 
-$sql = "SELECT tbl_projects.*, tbl_customers.companyName FROM tbl_projects
+$sql = "SELECT tbl_projects.*, tbl_customers.companyName, tbl_invoices.* FROM tbl_projects
+        LEFT JOIN tbl_invoices
+        ON tbl_projects.id = tbl_invoices.projectID
         LEFT JOIN tbl_customers
         ON tbl_projects.customerID = tbl_customers.id
         WHERE tbl_projects.id = :id";
@@ -15,7 +17,10 @@ $q = $db->prepare($sql);
 $q->bindParam(':id', $_GET['id']);
 $q->execute();
 
-$project = $q->fetch(PDO::FETCH_OBJ);
+$data = $q->fetch(PDO::FETCH_OBJ);
+
+$project = $data;
+$invoices = $data;
 
 ?>
 
@@ -50,7 +55,17 @@ $project = $q->fetch(PDO::FETCH_OBJ);
             </div>
 
             <div class="show-invoice">
-                <h2></h2>
+                <h2>Invoice</h2>
+                <ul>
+                    <li>ID: <?= $invoices->id ?></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
             </div>
         </main>
     </div>

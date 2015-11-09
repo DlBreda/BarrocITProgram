@@ -71,7 +71,6 @@ $projects = $data;
                 }
                 ?>
             </ul>
-            <a href="add.php?id=<?= $customer->id ?>">Add project</a>
         </div>
     </main>
 
