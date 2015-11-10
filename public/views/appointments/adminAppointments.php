@@ -27,9 +27,32 @@ if ($_SESSION['id'] != '1')
         <div class="top-dashboard">
             <h1>Appointment</h1>
         </div>
-        <div class="content appointments-admin">
-<!--            CONTENT HERE-->
-        </div>
+            <div class="content invoices-content">
+                <table class="table table-bordered invoices invoices-clients">
+                    <tr>
+                        <th>Company name</th>
+                        <th>Contact person</th>
+                        <th>All Appointsments</th>
+                    </tr>
+                    <?php if ( isset($customers) ): ?>
+                        <?php foreach( $customers as $customer ): ?>
+                            <tr>
+                                <td><a href="<?= 'show.php?id=' . $customer['id']; ?>"> <?= $customer['companyName']; ?></a></td>
+                                <td><?= $customer['contactPerson']; ?></td>
+                                <td><?= $customer['totalProjects']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </table>
+                <div class="active-inactive">
+
+                    <?php if (isset($_GET['type']) && $_GET['type'] == 'inactive'): ?>
+                        <a href="overview.php">View active customers</a>
+                    <?php else: ?>
+                        <a href="overview.php?type=inactive">View inactive customers</a>
+                    <?php endif; ?>
+                </div>
+            </div>
     </main>
 </div>
 <?php require_once __DIR__ . '/../../footer.php'; ?>

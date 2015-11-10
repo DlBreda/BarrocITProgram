@@ -27,7 +27,7 @@ if ($_SESSION['id'] != '4')
             <h1>Appointment</h1>
         </div>
         <div class="content appointments-dev">
-            <!--            CONTENT HERE-->
+
         </div>
     </main>
 </div>

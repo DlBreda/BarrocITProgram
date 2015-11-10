@@ -55,6 +55,7 @@ function editCustomer ($customer) {
     $q->bindParam(':creditWorthy', $customer['creditWorthy']);
     $q->bindParam(':bankAccountNumber', $customer['bankAccountNumber']);
 
+
     $q->execute();
 
     header('location:' . HTTP_PATH . 'public/views/customers/overview.php');
