@@ -239,7 +239,12 @@ function addInvoice($in) {
         }
     }
 
+    var_dump($out);
+    die();
+
   $q->execute($out);
+    $location = 'location:' . HTTP_PATH . "public/views/projects/show.php?id=" . $in['customerID'];
+    header($location);
 
 
 }
