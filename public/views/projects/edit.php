@@ -36,6 +36,9 @@ if (! in_array($_SESSION['id'], $allowed) ){
         <h2>Edit project</h2>
         <form class="col-md-4 col-md-push-4" action="<?= HTTP_PATH . '/app/controllers/customerController.php'?>" method="POST">
 
+            <?php var_dump($_GET['id']);
+            die();?>
+
             <input type="hidden" name="type" value="editProject"/>
             <input type="hidden" name="id" value="<?= $project->id; ?>">
 

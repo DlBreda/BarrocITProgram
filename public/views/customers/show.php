@@ -27,10 +27,11 @@ $customer = $q->fetch(PDO::FETCH_OBJ);
             <img src="../../img/banner.jpg" alt="banner">
         </div>
     </header>
-    </header>
     <?php require_once __DIR__ . '/../../aside.php'; ?>
     <main>
         <h2><?= $customer->companyName  ?></h2>
+        <h3><a href="../appointments/add.php"> Add appointment</a></h3>
+
 
         <ul class="customers-content">
             <li>Company name: <?= $customer->companyName ?></li>

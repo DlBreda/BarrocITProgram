@@ -27,6 +27,10 @@ switch ($_POST['type']) {
         addInvoice($_POST);
         break;
 
+    case 'addAppoints':
+        addAppointment($_POST);
+        break;
+
 //    case 'editInvoice':
 //        editInvoice($_POST);
 //        break;
@@ -240,8 +244,6 @@ function addInvoice($in) {
         }
     }
 
-    var_dump($out);
-    die();
 
   $q->execute($out);
     $location = 'location:' . HTTP_PATH . "public/views/projects/show.php?id=" . $in['customerID'];
@@ -250,8 +252,42 @@ function addInvoice($in) {
 
 }
 
-function addAppointment() {
+function addAppointment($in) {
+
+    global $db;
 
 
+    $sql = "SELECT * FROM tbl_apointments WHERE id = :id";
+    $q = $db->prepare($sql);
+    $q->bindParam(':id', $id);
+    $q->execute();
+
+
+//rowcount counts the returned rows (used to check if the username is already in use)
+
+
+    $customer = $q->fetchAll();
+
+    $sql = "INSERT INTO tbl_appointments (appointmentDate, description)
+                VALUES (:appointmentDate, :description)";
+    $q = $db->prepare($sql);
+    $q->bindParam(':appointmentDate', $in['appointmentDate']);
+    $q->bindParam(':description', $in['description']);
+    $q->execute();
+
+    $out = array();
+    foreach ( $in as $key => $value )
+    {
+        if ($key != 'type')
+        {
+            $out[':' . $key] = $value;
+        }
+    }
+    var_dump($out);
+    die();
+
+    $q->execute($out);
+
+    header('location:' . HTTP_PATH . 'public/views/appointments/adminAppointments.php');
 
 }

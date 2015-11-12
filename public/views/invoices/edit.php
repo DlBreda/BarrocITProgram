@@ -60,7 +60,7 @@ if (! in_array($_SESSION['id'], $allowed) ){
                 <input type="radio" name="send" value="<?= $customer->creditWorthy == 0; ?>" class=""/> <p style="float: left; margin-right: 16px;">No</p>
             </div>
 
-            <input type="submit" value="Edit invoice" clas="btn btn-primary">
+            <input type="submit" value="Edit invoice" class="btn btn-primary">
 
         </form>
     </main>
